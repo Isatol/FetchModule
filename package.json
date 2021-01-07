@@ -1,7 +1,7 @@
 {
   "name": "@isatol/fetchmodule",
   "version": "1.5.1",
-  "description": "Realiza peticiones HTTP de manera rápida",
+  "description": "A module for making HTTP requests based on fetch.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/isatol.an/fetchmodule.git"
+    "url": "git+https://github.com/Isatol/FetchModule"
   },
   "keywords": [
     "fetch",
@@ -22,9 +22,9 @@
   "author": "Isaías Orozco Toledo",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/isatol.an/fetchmodule/issues"
+    "url": "https://github.com/Isatol/FetchModule/issues"
   },
-  "homepage": "https://gitlab.com/isatol.an/fetchmodule#readme",
+  "homepage": "https://github.com/Isatol/FetchModule#readme",
   "dependencies": {
     "@types/node": "^13.9.0",
     "node-fetch": "^2.6.0",
