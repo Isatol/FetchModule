@@ -1,6 +1,6 @@
 {
   "name": "@isatol/fetchmodule",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A module for making HTTP requests based on fetch.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
