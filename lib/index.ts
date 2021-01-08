@@ -82,7 +82,7 @@ export async function request(url: RequestInfo, options: IOptions): Promise<IRes
     try {
       error = JSON.parse(jsonText);
     } catch (e) {
-      error = JSON.parse(`{'exception': '${text}' }`)
+      error = JSON.parse(text)
     }
     throw {
       error: error,
