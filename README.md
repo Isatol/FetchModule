@@ -10,7 +10,7 @@ npm install @isatol/fetchmodule
 
 ## Use
 
-You need to import the ```request``` method for make requests.
+You need to import the ```request``` method to make requests.
 
 Also included is support for creating an instance of a Base URL and headers to reuse them in all requests.
 
@@ -72,7 +72,10 @@ request("users", {
     page: 2,
   },
 }).then((response) => {
-  this.total = response.total;
+  const data = response.data; <- represent the data returned by the server.
+  const default = response.default; <- represent the Response object returned by fetch;
+  const status = response.status <- represent the status code;
+  this.total = response.data.total;
 });
 ```
 
