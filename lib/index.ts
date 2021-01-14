@@ -5,6 +5,7 @@ import { IOptions } from "./reqOptions";
 
 var urlBase: RequestInfo = "";
 var headers: HeadersInit;
+let retryed: Boolean = false;
 /**
  * create a new instance to autocomplete the initial URL
  * @param baseURL Corresponds to the initial URL
@@ -58,19 +59,16 @@ export async function request(url: RequestInfo, options: IOptions): Promise<IRes
         result = await resp.json();
     }
   }
-  else if(options.retry){
-    const numberOfRetries = 1
+  else if(options.retry){    
     if(Array.isArray(options.retry.retryOn) && options.retry.retryOn.includes(resp.status)){
-      for (let i = 0; i < numberOfRetries; i++) {
-        if(!options.retry.retryOn.includes(resp.status)) break;
-        if(i +1 === numberOfRetries){
-          if(options.retry.redirectToPageIfFails){
-            location.replace(options.retry.redirectToPageIfFails);
-          }
-          break;
-        }
-        return await request(url, options);
+      if(retryed){
+        retryed = false;
+        location.replace(options?.retry?.redirectToPageIfFails ?? "/");
       }
+      else{
+        retryed = true;
+        return await request(url, options);
+      }      
     }
   }
   else {
